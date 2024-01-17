@@ -1,0 +1,13 @@
+.title {
+  align-self: center;
+  color: #000;
+  font-size: 18px;
+  font-weight: 700;
+  grid-area: title;
+  line-height: 120%;
+  margin: 0;
+  overflow: hidden;
+  padding-left: 21px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

@@ -1,0 +1,64 @@
+.card {
+  background-color: #fff;
+  display: grid;
+  grid-template-areas:
+    "image image"
+    "title icon";
+  grid-template-columns: 265px 65px;
+  grid-template-rows: 300px 80px;
+  margin: 0;
+  max-width: 330px;
+  position: relative;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.likes {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  grid-area: icon;
+  margin-top: 22px;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.delete {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  border: 0;
+  background-color: transparent;
+  color: #fff;
+  transition: color .3s ease-in-out;
+  outline: 2px solid transparent;
+  border-radius: 6px;
+}
+
+.delete:hover {
+  color: #a52222;
+}
+
+.delete:focus {
+  outline-color: #a52222;
+}
+
+.delete:active {
+  color: #a52222;
+}
+
+.delete svg {
+  width: 100%;
+  height: 100%;
+}

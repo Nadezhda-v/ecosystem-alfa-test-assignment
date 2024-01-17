@@ -1,0 +1,9 @@
+.header {
+  padding: 15px 0;
+  background-color: var(--header);
+}
+
+.сontainer {
+  display: flex;
+  justify-content: flex-end;
+}
