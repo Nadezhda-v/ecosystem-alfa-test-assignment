@@ -2,10 +2,11 @@ import style from './Card.module.css';
 import PropTypes from 'prop-types';
 import Preview from './Preview';
 import Likes from './Likes';
-import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Title from './Title';
 import { ReactComponent as DeleteIcon } from './img/delete.svg';
+import { useDispatch } from 'react-redux';
+import { cardsSlice } from '../../../../store/cards/cardsSlice';
 
 export const Card = ({ cardData }) => {
   const {
@@ -15,47 +16,39 @@ export const Card = ({ cardData }) => {
     alt_description: description,
     id,
     likes,
-    // liked_by_user: liked,
+    liked_by_user: liked,
   } = cardData;
 
-  const [imageLoaded, setImageLoaded] = useState(false);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
-  useEffect(() => {
-    const img = new Image();
-    img.src = preview;
-    img.addEventListener('load', () => {
-      setImageLoaded(true);
-    });
+  const handleCardClick = (e) => {
+    if (
+      e.target.closest(`.${style.likes}`) ||
+      e.target.closest(`.${style.delete}`)
+    ) {
+      return;
+    }
+    navigate(`/card/${id}`);
+  };
 
-    return () => {
-      img.removeEventListener('load', () => {
-        setImageLoaded(true);
-      });
-    };
-  }, [preview]);
+  const handleDelCard = () => {
+    dispatch(cardsSlice.actions.deleateCard(id));
+  };
 
   return (
-    <Link
-      className={style.linkCard}
-      to={`/card/${id}`}
-    >
-      <div className={style.card}>
-        <Preview preview={preview} />
-        {imageLoaded && (
-          <>
-            <Title title={description} id={id} />
+    <div className={style.card} onClick={handleCardClick}>
+      <Preview preview={preview} />
+      <Title title={description} />
 
-            <div className={style.likes}>
-              <Likes likes={likes} />
-            </div>
-
-            <button className={style.delete}>
-              <DeleteIcon />
-            </button>
-          </>
-        )}
+      <div className={style.likes}>
+        <Likes likes={likes} liked={liked} id={id} />
       </div>
-    </Link>
+
+      <button className={style.delete} onClick={handleDelCard}>
+        <DeleteIcon />
+      </button>
+    </div>
   );
 };
 

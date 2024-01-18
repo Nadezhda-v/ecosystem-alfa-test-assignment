@@ -38,7 +38,8 @@ export const authRequestAsync = () => (dispatch, getState) => {
     .then(({ data }) => {
       const name = data.first_name;
       const image = data.profile_image.small;
-      const dataUser = { name, image };
+      const username = data.username;
+      const dataUser = { name, image, username };
       dispatch(authRequestSuccess(dataUser));
     })
     .catch((error) => {

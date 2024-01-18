@@ -4,7 +4,6 @@ import useAuth from '../../../hooks/useAuth';
 import { deleteToken } from '../../../store/token/tokenAction';
 import { useDispatch, useSelector } from 'react-redux';
 import Preloader from '../../../UI/Preloader';
-import { useNavigate } from 'react-router-dom';
 import { ReactComponent as LoginIcon } from './img/login.svg';
 import { useEffect, useState } from 'react';
 import { getCode } from '../../../api/token';
@@ -15,7 +14,6 @@ import { cardsRequestAsync } from '../../../store/cards/cardsAction';
 export const Auth = () => {
   const dispatch = useDispatch();
   const [loading, auth, clearAuth] = useAuth();
-  const navigate = useNavigate();
   const [isLogoutVisible, setLogoutVisible] = useState(false);
   const token = useSelector(state => state.token.token);
   const code = getCode();
@@ -24,7 +22,6 @@ export const Auth = () => {
     setLogoutVisible(false);
     dispatch(deleteToken());
     clearAuth();
-    navigate('/');
   };
 
   useEffect(() => {
@@ -36,7 +33,6 @@ export const Auth = () => {
       dispatch(authRequestAsync());
       dispatch(cardsRequestAsync());
       setLogoutVisible(true);
-      navigate('/cards');
     }
   }, [code, token]);
 
@@ -52,17 +48,16 @@ export const Auth = () => {
             src={auth.image}
             alt='Аватар'
           />
-        </div>
-      ) : <></>}
 
-      {isLogoutVisible ? (
-        <button
-          className={style.logout}
-          onClick={handleLogout}
-        >
-          {'Выйти'}
-        </button>
-      ) : (
+          {isLogoutVisible && (
+            <button
+              className={style.logout}
+              onClick={handleLogout}
+            >
+              {'Выйти'}
+            </button>
+          )}
+        </div>) : (
         <a className={style.authLink} href={urlAuth} >
           <LoginIcon className={style.svg} />
         </a>

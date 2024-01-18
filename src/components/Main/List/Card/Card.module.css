@@ -46,14 +46,7 @@
   border-radius: 6px;
 }
 
-.delete:hover {
-  color: #a52222;
-}
-
-.delete:focus {
-  outline-color: #a52222;
-}
-
+.delete:hover,
 .delete:active {
   color: #a52222;
 }

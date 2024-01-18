@@ -28,9 +28,9 @@ export const Modal = () => {
           <Preloader color={'#5c5c5c'} size={40} />
         )}
         {status === 'error' && (
-          <p className={style.text}>
+          <span className={style.text}>
             Возникла ошибка при загрузке фотографии
-          </p>
+          </span>
         )}
         {status === 'loaded' && (
           <>

@@ -1,21 +1,37 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Card from './Card';
 import style from './List.module.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { cardsRequestAsync } from '../../../store/cards/cardsAction';
 import { ReactComponent as FilterIcon } from './img/filter.svg';
+import useAuth from '../../../hooks/useAuth';
+import {
+  cardsRequestAsync,
+  filterRequestAsync,
+} from '../../../store/cards/cardsAction';
 
 export const List = () => {
-  const cards = useSelector((state) => state.cards.cards);
-  console.log('cards: ', cards);
+  const allCards = useSelector((state) => state.cards.cards);
+  const cardsWithLike = useSelector((state) => state.cards.cardsWithLike);
+  const token = useSelector(state => state.token.token);
+  const [filtered, setFiltered] = useState(false);
   const dispatch = useDispatch();
+  const [, auth] = useAuth();
+
+  const cards = filtered ? cardsWithLike : allCards;
 
   useEffect(() => {
     dispatch(cardsRequestAsync());
   }, []);
 
   const handleFilter = () => {
-    console.log(2);
+    if (!token) return;
+
+    setFiltered(prevState => {
+      if (!prevState) {
+        dispatch(filterRequestAsync(auth.username));
+      }
+      return !prevState;
+    });
   };
 
   return (
@@ -26,7 +42,7 @@ export const List = () => {
           className={style.filter}
           onClick={handleFilter}
         >
-          <FilterIcon className={style.svg}/>
+          <FilterIcon className={style.svg} />
         </button>
       </div>
 

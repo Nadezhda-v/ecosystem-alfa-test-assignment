@@ -18,9 +18,9 @@ export const photoRequestAsync = createAsyncThunk(
       headers,
     })
       .then(({ data }) => {
-        const likes = data.likes;
-        const isLiked = data.liked_by_user;
-        return { data, likes, isLiked };
+        const photo = data;
+
+        return photo;
       })
       .catch((error) => ({ error: error.message }));
   }
