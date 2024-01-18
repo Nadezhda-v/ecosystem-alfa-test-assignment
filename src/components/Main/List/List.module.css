@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.buttonWrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 330px);
+  justify-content: center;
+  gap: 30px;
+  margin-top: 40px;
+  margin-bottom: 60px;
+}
+
+.filter {
+  background-color: transparent;
+}
+
+.svg {
+  max-width: 45px;
+  max-height: 45px;
+}

@@ -1,0 +1,10 @@
+.header {
+  padding: 15px 0;
+  background-color: var(--header);
+  min-height: 80px;
+}
+
+.сontainer {
+  display: flex;
+  justify-content: flex-end;
+}
