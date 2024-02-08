@@ -1,7 +1,7 @@
 <h1 align="center">Тестовое задание</h1>
 
 <div align="center">
-  <img src="https://private-user-images.githubusercontent.com/109743172/297651105-21a0a536-f3f0-4fa7-ba6e-79689d929e33.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MDU1NjEzMzksIm5iZiI6MTcwNTU2MTAzOSwicGF0aCI6Ii8xMDk3NDMxNzIvMjk3NjUxMTA1LTIxYTBhNTM2LWYzZjAtNGZhNy1iYTZlLTc5Njg5ZDkyOWUzMy5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwMTE4JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDExOFQwNjU3MTlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0xYWY1MzgzMTI0ZmJmNTYzYjhjMGE3MDRhYTExNjc0NGQ2YmJiMzE1NTNiZTQ2YjdjMDQ2YTE5N2JlYzgzYjIwJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.ZJC61BvqUve4zYDZ_8Qc0Jv8i6e3yGECOUYxEhRLvXQ" width="700" alt="demo page">
+  <img src="https://github.com/Nadezhda-v/ecosystem-alfa-test-assignment/assets/109743172/81746dae-60b6-42b7-956c-32cdb825d0fd" width="700" alt="demo page">
 </div>
 
 <h4>:link: Ссылка на проект: https://ecosystem-alfa-test-assignment.vercel.app</h4>
